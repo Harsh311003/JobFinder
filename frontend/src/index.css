@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: "https://media.istockphoto.com/id/1279104620/photo/top-view-of-a-white-desktop-concept-job-search.jpg?s=612x612&w=0&k=20&c=Ow_kvA2wQ4rLlqX_oFHgpjLb1JMKyPQKLOPzbu6w6qw=";
+  z-index: 0;
 }
 
 code {
@@ -13,46 +14,44 @@ code {
     monospace;
 }
 
-.nav {
+.nav{
   display: flex;
-  /* justify-content: space-between; */
   color: black;
   background-color: rgb(255 255 255);
-  overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
-  height: 127px;
+  height: 90px;
   z-index: 5;
 }
 
-.btn {
+.dropdown-toggle{
   background-color: white;
+  z-index: 10;
   color: rgb(142, 142, 219);
 }
 
 
-.nav-left {
+.nav-left{
   position: relative;
   left: 30px;
 }
 
-.nav-right {
+.nav-right{
   display: flex;
   position: absolute;
   right: 55px;
   margin-top: 20px;
+  z-index: 10;
 }
 
-.cls {
-  /* padding: 8px 15px 10px 15px;
-  cursor: pointer;
-  border-radius: 1020px; */
+.cls{
   font-size: 28px;
   padding-right: 40px;
+  z-index: 10;
 }
 
-.link {
+.link{
   align-items: center;
   display: flex;
   margin-top: 8px;
@@ -71,15 +70,110 @@ a:link {
   text-decoration: none;
 }
 
-.bgimg {
-  background: linear-gradient(rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)), url("https://static.vecteezy.com/system/resources/previews/005/086/601/original/man-search-for-hiring-job-online-from-laptop-human-resources-management-concept-searching-professional-staff-free-vector.jpg") center;
+.bgimg{
+  z-index: -1;
+  background: linear-gradient(
+    rgba(255,255,255,0.5),
+    rgba(255,255,255,0.5)
+  ), url("https://static.vecteezy.com/system/resources/previews/005/086/601/original/man-search-for-hiring-job-online-from-laptop-human-resources-management-concept-searching-professional-staff-free-vector.jpg") center;
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* position: relative; */
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
 }
 
-.dropdown {
-  z-index: 5;
+.dropdown{
+  z-index: 10;
+}
+
+.parentlogin{
+  position: relative;
+  width: 350px;
+  height: 400px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  margin-left: 35%;
+  margin-top: 8%;
+}
+
+.btnlogin{
+  width: 222px;
+  margin-left: 20px;
+}
+
+.parentlogin h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 25px 0px;
+}
+
+.parentsignuprec{
+  position: relative;
+  width: 350px;
+  height: 570px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  margin-left: 35%;
+  margin-top: 5%;
+  margin-bottom: 15px;
+}
+
+.btnsignuprec{
+  width: 222px;
+  margin-left: 20px;
+}
+
+.parentsignuprec h1{
+  display: flex;
+  justify-content: center;
+  margin: -20px 0px 25px 0px;
+}
+
+.parentsignupapp{
+  position: relative;
+  width: 400px;
+  height: 700px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  margin-left: 35%;
+  margin-top: 5%;
+  margin-bottom: 15px;
+}
+
+.parentsignupapp h1{
+  display: flex;
+  justify-content: center;
+  margin: -20px 0px 25px 0px;
+}
+
+.mid{
+  display: flex;
+}
+
+.name{
+  width: 200px;
+}
+
+.styear{
+  width: 115px;
+}
+
+.endyear{
+  width: 100px;
 }
