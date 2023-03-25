@@ -5,9 +5,81 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: "https://media.istockphoto.com/id/1279104620/photo/top-view-of-a-white-desktop-concept-job-search.jpg?s=612x612&w=0&k=20&c=Ow_kvA2wQ4rLlqX_oFHgpjLb1JMKyPQKLOPzbu6w6qw=";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.nav {
+  display: flex;
+  /* justify-content: space-between; */
+  color: black;
+  background-color: rgb(255 255 255);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 127px;
+  z-index: 5;
+}
+
+.btn {
+  background-color: white;
+  color: rgb(142, 142, 219);
+}
+
+
+.nav-left {
+  position: relative;
+  left: 30px;
+}
+
+.nav-right {
+  display: flex;
+  position: absolute;
+  right: 55px;
+  margin-top: 20px;
+}
+
+.cls {
+  /* padding: 8px 15px 10px 15px;
+  cursor: pointer;
+  border-radius: 1020px; */
+  font-size: 28px;
+  padding-right: 40px;
+}
+
+.link {
+  align-items: center;
+  display: flex;
+  margin-top: 8px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 5px;
+  height: 33px;
+  font-size: 15px;
+  width: 67px;
+  background-color: white;
+  justify-content: center;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+.bgimg {
+  background: linear-gradient(rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)), url("https://static.vecteezy.com/system/resources/previews/005/086/601/original/man-search-for-hiring-job-online-from-laptop-human-resources-management-concept-searching-professional-staff-free-vector.jpg") center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+.dropdown {
+  z-index: 5;
 }
