@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv")
 const app = express();
 const mongoose = require("mongoose");
-const port = 5000;
+const authRoutes = require("./routes/authRoutes");
 
 mongoose.set('strictQuery', true);
 dotenv.config();
@@ -15,6 +15,8 @@ mongoose.connect(process.env.MONGO_URL,{
 });
 
 app.use(express.json());
+app.use("/api/auth/", authRoutes);
+
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Server is listening to port ${process.env.PORT}`);

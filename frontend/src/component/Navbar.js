@@ -11,8 +11,8 @@ const Navbar = ()=>{
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SIGNUP AS
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                    <li><a href="/SignupRecruiter">Recruiter</a></li>
-                    <li><a href="/signupApplicant">Applicant</a></li>
+                    <li><a href="/signuprecruiter">Recruiter</a></li>
+                    <li><a href="/signupapplicant">Applicant</a></li>
                     </ul>
                 </div>
                 <div className="cls link"><a href="/login">LOGIN</a></div>
