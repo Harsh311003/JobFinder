@@ -53,7 +53,11 @@ function SignupApplicant() {
         rules={[
           {
             type: 'email',
+<<<<<<< HEAD
             message: 'This is not a valid E-mail!',
+=======
+            message: 'This not a valid E-mail!',
+>>>>>>> 32258eecdfe763ba18ac2d511dd6aaddf4a0f1ac
           },
           {
             required: true,
