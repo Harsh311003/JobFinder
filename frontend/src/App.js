@@ -3,6 +3,8 @@ import Home from "./component/Home";
 import SignupApplicant from "./component/SignupApplicant"
 import SignupRecruiter from "./component/SignupRecruiter"
 import Login from "./component/Login"
+import RecruiterProfile from "./component/Profile"
+import ApplicantProfile from "./component/recruiter/Profile"
 
 function App() {
     return (
@@ -10,14 +12,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-<<<<<<< HEAD
             <Route path='/signupapplicant' element={<SignupApplicant />} />
             <Route path='/signuprecruiter' element={<SignupRecruiter />} />
-=======
-            <Route path='/signupApplicant' element={<SignupApplicant />} />
-            <Route path='/signupRecruiter' element={<SignupRecruiter />} />
->>>>>>> 32258eecdfe763ba18ac2d511dd6aaddf4a0f1ac
             <Route path='/login' element={<Login />} />
+            <Route path='/recruiterprofile' element={<RecruiterProfile />} />
+            <Route path='/applicantprofile' element={<ApplicantProfile />} />
           </Routes>
         </BrowserRouter>
       </div>

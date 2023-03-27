@@ -1,11 +1,8 @@
-import React from 'react'
+import React ,{useState,useEffect} from "react";
+import {Link,useNavigate} from "react-router-dom"
+import M from "materialize-css"
 import { Button, Form, Input, Select, Typography, Upload} from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { useState} from 'react';
-import Uploadresume from './Uploadresume'
-import Uploadphoto from './Uploadphoto'
-
-
 
 const { Option } = Select;
 const handleChange = (value) => {
@@ -13,6 +10,101 @@ const handleChange = (value) => {
 };
 
 function SignupApplicant() {
+
+  const navigate = useNavigate();
+  const [name,setName]=useState("")
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+  const [image,setImage] = useState("")
+  const [resume,setResume] = useState("")
+  const [urlImage,setUrlImage] = useState(undefined)
+  const [urlResume,setUrlResume] = useState(undefined)
+  useEffect(()=>{
+    if(urlImage && urlResume){
+      PostApplicant()
+    }
+},[urlImage, urlResume])
+
+  const uploadImage=()=>{
+    const data = new FormData()
+    // console.log('upload img k andr');
+    // console.log(data)
+    data.append("file", image)   
+    data.append("upload_preset", "JobFinder")
+    data.append("cloud_name", "dwzwff7c7") 
+    // console.log(data)
+    fetch("https://api.cloudinary.com/v1_1/dwzwff7c7/image/upload",{
+        method:"post",
+        body:data
+    })
+    .then(res=>res.json())
+    .then(data=>{
+       setUrlImage(data.url)
+      
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+  }
+
+  const uploadResume=()=>{
+    const data = new FormData()
+    data.append("file", resume)   
+    data.append("upload_preset", "JobFinder")
+    data.append("cloud_name", "dwzwff7c7") 
+    fetch("https://api.cloudinary.com/v1_1/dwzwff7c7/raw/upload",{
+        method:"post",
+        body:data
+    })
+    .then(res=>res.json())
+    .then(data=>{
+       setUrlResume(data.url)
+      // console.log(data)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+  }
+const postData=()=>{
+  if(image && resume){
+    uploadImage()
+    uploadResume()
+  }
+  else {
+    PostApplicant()
+  }
+}
+  const PostApplicant = ()=>{
+
+    fetch("/signupapplicant",{
+      method:"post",
+      headers:{
+          "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+          name,
+          email,
+          password,
+          resume: urlResume,
+          image:urlImage
+      })
+      }).then(res=>res.json())
+      .then(data=>{
+        if(data.error){
+            M.toast({html: data.error,classes:"#c62828 red darken-3"})
+        }
+        else{
+            M.toast({html:data.message,classes:"#43a047 green darken-1"})
+            navigate('/login')
+        }
+      }).catch(err=>{
+          console.log(err)
+      })
+
+  }
+
+
+
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
@@ -46,18 +138,18 @@ function SignupApplicant() {
         scrollToFirstError
         >
         <Form.Item>
-          <Input placeholder="Name" />
+          <Input 
+          placeholder="Name" 
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
+          />
         </Form.Item>
         <Form.Item
         name="email"
         rules={[
           {
             type: 'email',
-<<<<<<< HEAD
             message: 'This is not a valid E-mail!',
-=======
-            message: 'This not a valid E-mail!',
->>>>>>> 32258eecdfe763ba18ac2d511dd6aaddf4a0f1ac
           },
           {
             required: true,
@@ -65,7 +157,11 @@ function SignupApplicant() {
           },
         ]}
         >
-        <Input placeholder="Email" />
+        <Input 
+        placeholder="Email" 
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)}
+        />
         </Form.Item>
         <Form.Item
           name="password"
@@ -77,88 +173,34 @@ function SignupApplicant() {
           ]}
           hasFeedback
         >
-          <Input.Password placeholder='Password' />
-        </Form.Item>
-        <Form.Item>
-          <div className='mid'>
-
-              <div className='name'>
-                <Form.Item
-                name="name"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your Institution name!',
-                  },
-                ]}
-                >
-                <Input placeholder='Institution name' />
-                </Form.Item>
-              </div>
-
-              <div className='styear'>
-                <Form.Item
-                name="startyear"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your start year',
-                  },
-                ]}
-                >
-                <Input placeholder='Start year' />
-                </Form.Item>
-              </div>
-
-              <div className='endyear'>
-                <Form.Item
-                name="endyear"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your end year',
-                  },
-                ]}
-                >
-                <Input placeholder='End year' />
-                </Form.Item>
-              </div>
-
-          </div>
+          <Input.Password 
+          placeholder='Password' 
+          value={password}
+          onChange={(e)=>setPassword(e.target.value)}
+          />
         </Form.Item>
 
         <Form.Item>
-          <Select
-            mode="multiple"
-            style={{
-              width: '100%',
-            }}
-            placeholder="select skills"
-            defaultValue={[]}
-            onChange={handleChange}
-            optionLabelProp="label"
-          >
-            <Option value="Bootstrap" label="Bootstrap"></Option>
-            <Option value="Vue.js" label="Vue.js"></Option>
-            <Option value="Angular" label="Angular"></Option>
-            <Option value="ReactJs" label="ReactJs"></Option>
-            <Option value="HTML" label="Html"></Option>
-            <Option value="Flutter" label="Flutter"></Option>
-            <Option value="Node.Js" label="Node.Js"></Option>
-            <Option value="CSS" label="CSS"></Option>
-          </Select>
+            <div className="btn #64b5f6 blue darken-1">
+                <span>Upload pic</span>
+                <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
+            </div>
         </Form.Item>
 
         <Form.Item>
-          <Uploadresume />
-        </Form.Item>
-
-        <Form.Item>
-          <Uploadphoto />
+            <div className="btn #64b5f6 blue darken-1">
+                <span>Upload resume</span>
+                <input type="file" onChange={(e)=>setResume(e.target.files[0])} />
+            </div>
         </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="btn btnsignuprec login-form-button">
+            <Button  
+            type="primary" 
+            htmlType="submit" 
+            className="btn btnsignuprec login-form-button"
+            onClick={()=>postData()}
+             >
               Sign up
             </Button>
           </Form.Item>

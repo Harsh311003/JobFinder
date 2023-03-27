@@ -1,51 +1,86 @@
-const router = require("express").Router();
+// const router = require("express").Router();
+const express = require ("express")
 const CryptoJS = require("crypto-js");
+const crypto = require("crypto")
 const jwt = require("jsonwebtoken");
 const Applicant = require("../models/Applicant");
 const Recruiter = require("../models/Recruiter");
+const bodyParser = require("body-parser");
+const router = express.Router()
+const bcrypt = require('bcryptjs')
+router.use(bodyParser.json())
 
-
-router.post("/signuprecruiter", async(req, res)=>{
-    const newRecruiter = new Recruiter({
-        name: req.body.name,
-        email: req.body.email,
-        password: CryptoJS.AES.encrypt(     // to make password encrypted
-            req.body.password, 
-            process.env.PASS_SEC					
-        ).toString(),
-        bio: req.body.bio,
-        contactNumber: req.body.contactNumber,
-    });
-
-    try{
-        const savedRecruiter = await newRecruiter.save();			// async finc
-        res.status(201).json(savedRecruiter);
-    } catch(err){
-        res.status(500).json(err);
-    } 
+router.post('/signuprecruiter',(req,res)=>{
+    const {name,email,password,bio,contactNumber} = req.body 
+    if(!email || !password || !name || !contactNumber){
+       return res.status(422).json({error:"please add all the fields"})
+    }
+    Recruiter.findOne({email:email})
+    .then((savedUser)=>{
+        if(savedUser){
+          return res.status(422).json({error:"user already exists with that email"})
+        }
+        bcrypt.hash(password,12)
+        .then(hashedpassword=>{
+              const user = new Recruiter({
+                  name,
+                  email,
+                  password:hashedpassword,
+                  bio,
+                  contactNumber
+              })
+      
+              user.save()
+              .then(user=>{
+                  res.json({message:"saved successfully"})
+              })
+              .catch(err=>{
+                  console.log(err)
+              })
+        })
+       
+    })
+    .catch(err=>{
+      console.log(err)
+    })
 })
 
-router.post("/signupapplicant", async(req, res)=>{
-    const newApplicant = new Applicant({
-        name: req.body.name,
-        email: req.body.email,
-        password: CryptoJS.AES.encrypt(				// to make password encrypted
-            req.body.password, 
-            process.env.PASS_SEC					
-        ).toString(),
-        education: req.body.education,
-        skills: req.body.skills,
-        resume: req.body.resume,
-        photo: req.body.photo,
-    });
-
-    try{
-        const savedApplicant = await newApplicant.save();			// async finc
-        res.status(201).json(savedApplicant);
-    } catch(err){
-        res.status(500).json(err);
-    } 
+router.post('/signupapplicant',(req,res)=>{
+    const {name,email,password, image, resume} = req.body 
+    if(!name || !email || !password){
+       return res.status(422).json({error:"please add all the fields"})
+    }
+    // console.log(image)
+    Applicant.findOne({email:email})
+    .then((savedUser)=>{
+        if(savedUser){
+          return res.status(422).json({error:"user already exists with that email"})
+        }
+        bcrypt.hash(password,12)
+        .then(hashedpassword=>{
+              const user = new Applicant({
+                  name,
+                  email,
+                  password:hashedpassword,
+                  image,
+                  resume
+              })
+      
+              user.save()
+              .then(user=>{
+                  res.json({message:"saved successfully"})
+              })
+              .catch(err=>{
+                  console.log(err)
+              })
+        })
+       
+    })
+    .catch(err=>{
+      console.log(err)
+    })
 })
+
 
 router.post("/login", async(req, res)=>{
     try{

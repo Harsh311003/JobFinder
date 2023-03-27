@@ -11,8 +11,4 @@ function Home() {
   )
 }
 
-<<<<<<< HEAD
 export default Home
-=======
-export default Home
->>>>>>> 32258eecdfe763ba18ac2d511dd6aaddf4a0f1ac

@@ -28,8 +28,7 @@ let recruiterSchema = new mongoose.Schema({
       // },
       required: true,
     },
-  },
-  { collation: { locale: "en" } 
+  // { collation: { locale: "en" } 
 });
 
 module.exports = mongoose.model("recruiters", recruiterSchema);
