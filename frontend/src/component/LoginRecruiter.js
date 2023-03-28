@@ -1,14 +1,11 @@
 import React from 'react'
-import {useState,useContext}  from "react";
+import {useState}  from "react";
 import {Link,useNavigate} from "react-router-dom";
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Typography } from 'antd';
 import M from "materialize-css"
-// import { UserContext } from "../../App";
 
 function Login() {
 
-  // const {state,dispatch} = useContext(UserContext)
   const navigate = useNavigate();        /*instead of useHistory */
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")

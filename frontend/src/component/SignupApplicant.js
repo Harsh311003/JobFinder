@@ -2,7 +2,6 @@ import React ,{useState,useEffect} from "react";
 import {Link,useNavigate} from "react-router-dom"
 import M from "materialize-css"
 import { Button, Form, Input, Select, Typography, Upload} from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 const handleChange = (value) => {
