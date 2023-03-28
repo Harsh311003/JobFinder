@@ -38,7 +38,7 @@ const SignupRecruiter=()=> {
           }
           else{
               M.toast({html:data.message,classes:"#43a047 green darken-1"})
-              navigate('/login')
+              navigate('/loginrecruiter')
           }
         }).catch(err=>{
             console.log(err)
@@ -137,7 +137,7 @@ const SignupRecruiter=()=> {
         >
         <Input 
         type="number"
-        placeholder="contactNumber"
+        placeholder="Contact Number"
         value={contactNumber}
         onChange={(e)=>setContactNumber(e.target.value)}
         addonBefore={prefixSelector} 

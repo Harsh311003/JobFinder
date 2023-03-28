@@ -35,6 +35,7 @@ code {
 .nav-left{
   position: relative;
   left: 30px;
+
 }
 
 .nav-right{
@@ -95,7 +96,7 @@ a:link {
 .parentlogin{
   position: relative;
   width: 350px;
-  height: 400px;
+  height: 420px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
@@ -145,7 +146,7 @@ a:link {
 .parentsignupapp{
   position: relative;
   width: 400px;
-  height: 700px;
+  height: 560px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;

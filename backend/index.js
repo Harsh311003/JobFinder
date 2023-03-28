@@ -14,8 +14,10 @@ mongoose.connect(process.env.MONGO_URL,{
 }).catch((err)=>{
     console.log(err);
 });
+
 require('./models/Recruiter')
 require('./models/Applicant')
+
 app.use(express.json());
 app.use(require('./routes/authRoutes'))
 // app.use("/api/auth/", authRoutes);
