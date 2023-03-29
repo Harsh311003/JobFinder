@@ -13,22 +13,21 @@ router.use(bodyParser.json())
 router.post("/createjob",requireRecruiterLogin,(req,res)=>{
     const user = req.user;
     const data = req.body;
-  
+  console.log(req)
     let job = new Job({
       userId: user._id,
       title: data.title,
       maxApplicants: data.maxApplicants,
       maxPositions: data.maxPositions,
-      dateOfPosting: data.dateOfPosting,
       deadline: data.deadline,
       skills: data.skills,
       jobType: data.jobType,
-      duration: data.duration,
       salary: data.salary,
       
     });
     job.save().then(result=>{
         res.json({job:result})
+        console.log(result)
     })
     .catch(err=>{
         console.log(err)

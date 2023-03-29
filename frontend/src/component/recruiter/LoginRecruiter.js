@@ -5,7 +5,7 @@ import { Button, Checkbox, Form, Input, Typography } from 'antd';
 import M from "materialize-css"
 
 function Login() {
-  const {state,dispatch} = useContext(UserContext)
+  // const {state,dispatch} = useContext(UserContext)
   const navigate = useNavigate();        /*instead of useHistory */
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")

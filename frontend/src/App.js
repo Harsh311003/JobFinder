@@ -1,5 +1,5 @@
 import React,{useEffect,createContext,useReducer,useContext} from 'react';
-import {Route, Routes, BrowserRouter, Navigate,useLocation} from "react-router-dom"
+import {Route, Routes, BrowserRouter, useNavigate,useLocation} from "react-router-dom"
 import Home from "./component/Home";
 import SignupApplicant from "./component/applicant/SignupApplicant"
 import SignupRecruiter from "./component/recruiter/SignupRecruiter"

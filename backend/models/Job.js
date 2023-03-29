@@ -14,17 +14,17 @@ let jobSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    duration: {
-        type: Number,
-        required: true,
-        min: 0,
-        validate: [
-        {
-            validator: Number.isInteger,
-            msg: "Duration should be an integer",
-        },
-        ],
-    },
+    // duration: {
+    //     type: Number,
+    //     required: true,
+    //     min: 0,
+    //     validate: [
+    //     {
+    //         validator: Number.isInteger,
+    //         msg: "Duration should be an integer",
+    //     },
+    //     ],
+    // },
     salary: {
         type: Number,
         validate: [
@@ -46,14 +46,14 @@ let jobSchema = new mongoose.Schema({
     },
     deadline: {
         type: Date,
-        validate: [
-            {
-                validator: function (value) {
-                return this.dateOfPosting < value;
-                },
-                msg: "Deadline should be greater than dateOfPosting",
-            },
-        ],
+        // validate: [
+        //     {
+        //         validator: function (value) {
+        //         return this.dateOfPosting < value;
+        //         },
+        //         msg: "Deadline should be greater than dateOfPosting",
+        //     },
+        // ],
     },
     maxApplicants: {
         type: Number,
