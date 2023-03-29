@@ -11,7 +11,7 @@ function CreateJob() {
     const [skills,setSkills]=useState("")
     const [jobType,setJobType]=useState("")
     const [salary,setSalary]=useState("")
-    const [deadline,setDeadline]=useState("")
+    const [deadline,setDeadline]=useState(new Date())
     const [applicants,setApplicants]=useState("")
     const [positions,setPositions]=useState("")
 
@@ -20,7 +20,37 @@ function CreateJob() {
       };
 
       const PostJob=()=>{
-
+        fetch("/createjob", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("jwt")
+          },
+          body: JSON.stringify({
+            title,
+            skills,
+            jobType,
+            salary,
+            deadline,
+            applicants,
+            positions
+           
+          })
+        }).then(res => res.json())
+          .then(data => {
+            console.log(data)
+            if (data.error) {
+              M.toast({ html: data.error, classes: "#c62828 red darken-3" })
+            }
+            else {
+              M.toast({ html: "job created successfully", classes: "#00e676 green accent-3" })
+              navigate('/recruiterprofile')
+              console.log(data)
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          })
       }
 
   return (
@@ -112,8 +142,12 @@ function CreateJob() {
         <DatePicker className='date'
         type="date"
         placeholder="Application Deadline"
-        value={deadline}
-        onChange={(e)=>setDeadline(e.target.value)}
+        value={deadline.getFullYear().toString() +
+          "-" +
+          (deadline.getMonth() + 1).toString().padStart(2, 0) +
+          "-" +
+          deadline.getDate().toString().padStart(2, 0)}
+        onChange={(e)=>setDeadline(new Date(e.target.value))}
         />
       </Form.Item>
 

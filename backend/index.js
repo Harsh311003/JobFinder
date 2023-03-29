@@ -17,9 +17,11 @@ mongoose.connect(process.env.MONGO_URL,{
 
 require('./models/Recruiter')
 require('./models/Applicant')
+require('./models/Job')
 
 app.use(express.json());
 app.use(require('./routes/authRoutes'))
+app.use(require('./routes/job'))    
 // app.use("/api/auth/", authRoutes);
 
 
