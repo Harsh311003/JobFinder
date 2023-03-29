@@ -8,6 +8,7 @@ import LoginRecruiter from "./component/recruiter/LoginRecruiter"
 import HomeApplicant from "./component/applicant/HomeApplicant"
 import HomeRecruiter from "./component/recruiter/HomeRecruiter"
 import CreateJob from "./component/recruiter/CreateJob";
+import MyJob from "./component/recruiter/Myjob";
 import {reducer,initialState} from './reducers/userReducer'
 export const UserContext = createContext()
 
@@ -35,6 +36,7 @@ const Routing = ()=>{
             <Route path='/recruiterprofile' element={<HomeRecruiter />} />
             <Route path='/applicantprofile' element={<HomeApplicant />} />
             <Route path='/newjob' element={<CreateJob />} />
+            <Route path='/myjob' element={<MyJob />} />
           </Routes>
   )
 }
