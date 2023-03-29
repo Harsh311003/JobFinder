@@ -34,5 +34,17 @@ router.post("/createjob",requireRecruiterLogin,(req,res)=>{
     });
    
 });
+//  my uploaded jobs
+router.get("/myjobs",requireRecruiterLogin,(req,res)=>{  
+    Job.find({userId: req.user._id})  
+    .then(myjobs=>{
+        console.log(myjobs)
+        res.json({myjobs})
+        
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
 
 module.exports = router

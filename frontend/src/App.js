@@ -8,7 +8,7 @@ import LoginRecruiter from "./component/recruiter/LoginRecruiter"
 import HomeApplicant from "./component/applicant/HomeApplicant"
 import HomeRecruiter from "./component/recruiter/HomeRecruiter"
 import CreateJob from "./component/recruiter/CreateJob";
-import MyJob from "./component/recruiter/Myjob";
+import MyJob from "./component/recruiter/MyJob";
 import {reducer,initialState} from './reducers/userReducer'
 export const UserContext = createContext()
 
