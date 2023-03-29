@@ -14,17 +14,17 @@ let jobSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // duration: {
-    //     type: Number,
-    //     required: true,
-    //     min: 0,
-    //     validate: [
-    //     {
-    //         validator: Number.isInteger,
-    //         msg: "Duration should be an integer",
-    //     },
-    //     ],
-    // },
+    duration: {
+        type: Number,
+        // required: true,
+        min: 0,
+        // validate: [
+        // {
+        //     validator: Number.isInteger,
+        //     msg: "Duration should be an integer",
+        // },
+        // ],
+    },
     salary: {
         type: Number,
         validate: [

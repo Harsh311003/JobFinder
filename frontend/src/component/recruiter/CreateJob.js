@@ -12,8 +12,8 @@ function CreateJob() {
     const [jobType,setJobType]=useState("")
     const [salary,setSalary]=useState("")
     const [deadline,setDeadline]=useState(new Date())
-    const [applicants,setApplicants]=useState("")
-    const [positions,setPositions]=useState("")
+    const [maxapplicants,setApplicants]=useState("")
+    const [maxpositions,setPositions]=useState("")
 
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
@@ -32,9 +32,8 @@ function CreateJob() {
             jobType,
             salary,
             deadline,
-            applicants,
-            positions
-           
+            maxapplicants,
+            maxpositions
           })
         }).then(res => res.json())
           .then(data => {
@@ -132,12 +131,12 @@ function CreateJob() {
 
       <Form.Item className='child'
         name="deadline"
-        rules={[
-          {
-            required: true,
-            message: 'Please enter the deadline!',
-          },
-        ]}
+        // rules={[
+        //   {
+        //     required: true,
+        //     message: 'Please enter the deadline!',
+        //   },
+        // ]}
       >
         <DatePicker className='date'
         type="date"
@@ -152,7 +151,7 @@ function CreateJob() {
       </Form.Item>
 
       <Form.Item className='child'
-        name="applicant"
+        name="maxapplicants"
         rules={[
           {
             required: true,
@@ -163,13 +162,13 @@ function CreateJob() {
         <Input
           type="number"
           placeholder="Maximum Number of Applicants"
-          value={applicants}
+          value={maxapplicants}
           onChange={(e)=>setApplicants(e.target.value)}
         />
       </Form.Item>
 
       <Form.Item className='child'
-        name="positions"
+        name="maxpositions"
         rules={[
           {
             required: true,
@@ -180,7 +179,7 @@ function CreateJob() {
         <Input
           type="number"
           placeholder="Positions Available"
-          value={positions}
+          value={maxpositions}
           onChange={(e)=>setPositions(e.target.value)}
         />
       </Form.Item>

@@ -37,7 +37,7 @@ const Routing = ()=>{
             <Route path='/applicantprofile' element={<HomeApplicant />} />
             <Route path='/newjob' element={<CreateJob />} />
             <Route path='/myjob' element={<MyJob />} />
-          </Routes>
+    </Routes>
   )
 }
 

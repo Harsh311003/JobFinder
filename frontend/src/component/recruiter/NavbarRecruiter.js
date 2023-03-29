@@ -11,9 +11,9 @@ function NavbarRecruiter() {
                 <li><a href="/">HOME</a></li>
                 <li><a href="/newjob">ADD JOBS</a></li>
                 <li><a href="/myjob">MY JOBS</a></li>
-                <li><a href="#">EMPLOYEES</a></li>
+                <li><a href="/">EMPLOYEES</a></li>
                 <li><a href="/recruiterprofile">PROFILE</a></li>
-                <li><a href="#">LOGOUT</a></li>
+                <li><a href="/">LOGOUT</a></li>
             </ul>
         </div>
     </div>
