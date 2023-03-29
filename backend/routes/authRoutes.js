@@ -99,7 +99,7 @@ router.post("/loginrecruiter",(req,res)=>{
             if(doMatch)
             {
                 // res.json("Sucessfully logged in");
-                const token=jwt.sign({_id:saveduser._id},process.env.PASS_SEC); //saving user id to _id 
+                const token=jwt.sign({_id:saveduser._id},process.env.JWT_SEC); //saving user id to _id 
                 const {_id,name,email} = saveduser
                 res.json({token,user:{_id,name,email}});
             }
