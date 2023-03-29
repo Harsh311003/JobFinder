@@ -1,11 +1,11 @@
 import React from 'react'
-import {useState}  from "react";
+import {useState,useContext}  from "react";
 import {Link,useNavigate} from "react-router-dom";
 import { Button, Checkbox, Form, Input, Typography } from 'antd';
 import M from "materialize-css"
 
 function Login() {
-
+  const {state,dispatch} = useContext(UserContext)
   const navigate = useNavigate();        /*instead of useHistory */
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
@@ -31,8 +31,9 @@ function Login() {
       M.toast({html:data.error,classes:"#c62828 red darken-3"})
      }
      else {
-      localStorage.setItem("jwt",data.token)
-      localStorage.setItem("user",JSON.stringify(data.user))
+      //saving state of login user in local storage
+      localStorage.setItem("jwt",data.token)   //saving token
+      localStorage.setItem("user",JSON.stringify(data.user))   //saving user details
       M.toast({html:"success",classes:"#43a047 green darken-1"})
       navigate('/recruiterprofile');
       window.location.reload();
