@@ -1,11 +1,12 @@
 import {Route, Routes, BrowserRouter, Navigate} from "react-router-dom"
 import Home from "./component/Home";
-import SignupApplicant from "./component/SignupApplicant"
-import SignupRecruiter from "./component/SignupRecruiter"
-import LoginApllicant from "./component/LoginApplicant"
-import LoginRecruiter from "./component/LoginRecruiter"
-import ApplicantProfile from "./component/Profile"
-import RecruiterProfile from "./component/recruiter/Profile"
+import SignupApplicant from "./component/applicant/SignupApplicant"
+import SignupRecruiter from "./component/recruiter/SignupRecruiter"
+import LoginApllicant from "./component/applicant/LoginApplicant"
+import LoginRecruiter from "./component/recruiter/LoginRecruiter"
+import HomeApplicant from "./component/applicant/HomeApplicant"
+import HomeRecruiter from "./component/recruiter/HomeRecruiter"
+import CreateJob from "./component/recruiter/CreateJob";
 
 function App() {
     return (
@@ -17,8 +18,9 @@ function App() {
             <Route path='/signuprecruiter' element={<SignupRecruiter />} />
             <Route path='/loginapplicant' element={<LoginApllicant />} />
             <Route path='/loginrecruiter' element={<LoginRecruiter />} />
-            <Route path='/recruiterprofile' element={<RecruiterProfile />} />
-            <Route path='/applicantprofile' element={<ApplicantProfile />} />
+            <Route path='/recruiterprofile' element={<HomeRecruiter />} />
+            <Route path='/applicantprofile' element={<HomeApplicant />} />
+            <Route path='/newjob' element={<CreateJob />} />
           </Routes>
         </BrowserRouter>
       </div>

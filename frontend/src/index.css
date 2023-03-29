@@ -73,10 +73,12 @@ a:link {
 
 .bgimg{
   z-index: -1;
-  background: linear-gradient(
+  background: 
+  /* linear-gradient(
     rgba(255,255,255,0.5),
     rgba(255,255,255,0.5)
-  ), url("https://static.vecteezy.com/system/resources/previews/005/086/601/original/man-search-for-hiring-job-online-from-laptop-human-resources-management-concept-searching-professional-staff-free-vector.jpg") center;
+  ),  */
+  url("https://static.vecteezy.com/system/resources/previews/005/086/601/original/man-search-for-hiring-job-online-from-laptop-human-resources-management-concept-searching-professional-staff-free-vector.jpg") center;
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -177,4 +179,76 @@ a:link {
 
 .endyear{
   width: 100px;
+}
+
+.bgimgrec{
+  z-index: -1;
+  background: 
+    /* linear-gradient(
+    rgba(255,255,255,0.5),
+    rgba(255,255,255,0.5)
+  ),  */
+  url("https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmVjcnVpdG1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60") center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* position: relative; */
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+.navrec{
+  display: flex;
+  color: black;
+  /* background-color: rgb(255 255 255); */
+  color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 82px;
+  align-items: center;
+}
+
+.navrec h1{
+  color: white;
+}
+
+
+.navrec-left{
+  position: relative;
+  left: 30px;
+}
+
+.navrec-right{
+  display: flex;
+  position: absolute;
+  right: 15px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navrec-right ul{
+  display: flex;
+  list-style-type: none;
+}
+
+.navrec-right ul li{
+  padding: 12px;
+  font-size: 18px;
+}
+
+.navrec-right ul li a{
+  color: white;
+}
+
+.job{
+  height: 560px;
+}
+
+.date{
+  width: 270px;
 }
