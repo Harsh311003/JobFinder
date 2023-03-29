@@ -1,6 +1,10 @@
 const mongoose = require ("mongoose")
 
 let jobSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
     title: {
         type: String,
         required: true
@@ -35,6 +39,10 @@ let jobSchema = new mongoose.Schema({
             msg: "Salary should be positive",
           },
         ],
+    },
+    dateOfPosting: {
+      type: Date,
+      default: Date.now,
     },
     deadline: {
         type: Date,

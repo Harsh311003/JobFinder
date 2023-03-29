@@ -21,7 +21,7 @@ require('./models/Job')
 
 app.use(express.json());
 app.use(require('./routes/authRoutes'))
-app.use(require('./routes/job'))
+app.use(require('./routes/job'))    
 // app.use("/api/auth/", authRoutes);
 
 
