@@ -59,7 +59,6 @@ function CreateJob() {
         ]}
       >
         <Input
-          // prefix={<LockOutlined className="site-form-item-icon" />}
           type="text"
           placeholder="Skills"
           value={skills}
@@ -77,7 +76,6 @@ function CreateJob() {
         ]}
       >
         <Input
-          // prefix={<LockOutlined className="site-form-item-icon" />}
           type="text"
           placeholder="Job Type"
           value={jobType}
@@ -95,7 +93,6 @@ function CreateJob() {
         ]}
       >
         <Input
-          // prefix={<LockOutlined className="site-form-item-icon" />}
           type="number"
           placeholder="Salary in ₹"
           value={salary}
@@ -130,7 +127,6 @@ function CreateJob() {
         ]}
       >
         <Input
-          // prefix={<LockOutlined className="site-form-item-icon" />}
           type="number"
           placeholder="Maximum Number of Applicants"
           value={applicants}
@@ -148,7 +144,6 @@ function CreateJob() {
         ]}
       >
         <Input
-          // prefix={<LockOutlined className="site-form-item-icon" />}
           type="number"
           placeholder="Positions Available"
           value={positions}
