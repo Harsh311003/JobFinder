@@ -1,15 +1,15 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; //from going from one page to another page, page will not refresh now ,it goes directly on that page without refreshing (😇)
-// import { UserContext } from '../App'
+import { UserContext } from '../App'
 
 
 const Header = () => {
 
-    // const { state, dispatch } = useContext(UserContext)
+    const { state, dispatch } = useContext(UserContext)
 
     const renderList = () => {
-        if (true) {
-            if (false) {
+        if (state) {
+            if (state.usertype==0) {
                 return (
                     <div className="nav">
                         <div className="nav-left">
