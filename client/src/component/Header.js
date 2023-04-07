@@ -1,11 +1,19 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; //from going from one page to another page, page will not refresh now ,it goes directly on that page without refreshing (😇)
 import { UserContext } from '../App'
+import { message } from 'antd'
 
 
 const Header = () => {
 
-    // const { state, dispatch } = useContext(UserContext)
+    const { state, dispatch } = useContext(UserContext)
+    const navigate = useNavigate();
+
+    const logoutHandler = () => {
+        localStorage.removeItem("user");
+        message.success("Logout Successfully");
+        navigate("/");
+    };
 
     const renderList = () => {
         if (true) {
@@ -30,7 +38,7 @@ const Header = () => {
                 return (
                     <div className="nav">
                         <div className="nav-left">
-                            <a href="/"><h1>JobFinder</h1></a>
+                            <a href="/"><h3>JobFinder</h3></a>
                         </div>
                         <div className="nav-right">
                             <ul>
@@ -38,7 +46,7 @@ const Header = () => {
                                 <li><a href="/myjobs">MY JOBS</a></li>
                                 <li><a href="/#">EMPLOYEES</a></li>
                                 <li><a href="/profile">PROFILE</a></li>
-                                <li><a href="/#">LOGOUT</a></li>
+                                <li><button className="btn-logout-rec" onClick={logoutHandler}>LOGOUT</button></li>
                             </ul>
                         </div>
                     </div>

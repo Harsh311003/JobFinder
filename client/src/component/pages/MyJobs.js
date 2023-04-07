@@ -44,9 +44,9 @@ const MyJobs = () => {
                     <p>Skills: {job.skills}</p>
                   </div>
                   <div className="job-content-btn">
-                    <button className="bton btn btn-secondary">View Applications</button>
-                    <button className="bton btn btn-secondary">Update Details</button>
-                    <button className="bton btn btn-secondary">Delete Job</button>
+                    <button className="btn-rec-jobs">View Applications</button>
+                    <button className="btn-rec-jobs">Update Details</button>
+                    <button className="btn-rec-jobs">Delete Job</button>
                   </div>
                 </div>
               </Card>
