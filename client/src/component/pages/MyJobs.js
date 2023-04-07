@@ -36,9 +36,13 @@ const MyJobs = () => {
                   <div>
                     <p>Role: {job.jobType}</p>
                     <p>Salary: ₹ {job.salary} per month</p>
+
                     <p>Posted By: {user.name}</p>
                     <p>Date of posting: {moment(job.dateOfPosting).format('YYYY-MM-DD')}</p>
                     <p>Application Deadline: {moment(job.deadline).format('YYYY-MM-DD')}</p>
+=======
+                    <p>Date of posting: {moment(job.dateOfPosting).format('YYYY-MM-DD')}</p>
+
                     <p>Number of Applicants: {job.maxApplicants}</p>
                     <p>Remaining Number of Positions: {job.maxPositions}</p>
                     <p>Skills: {job.skills}</p>
