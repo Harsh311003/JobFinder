@@ -9,7 +9,7 @@ const Header = () => {
 
     const renderList = () => {
         if (state) {
-            if (state.usertype==0) {
+            if (state.usertype==0) { // Applicant's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
@@ -26,7 +26,7 @@ const Header = () => {
                     </div>
                 )
             }
-            else {
+            else {   // Recruiter's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
@@ -45,7 +45,7 @@ const Header = () => {
                 )
             }
         }
-        else {
+        else { // home navbar
             return (
                 <div className="nav">
                     <div className="nav-left">

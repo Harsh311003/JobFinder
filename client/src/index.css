@@ -15,7 +15,7 @@ code {
 }
 
 .content {
-  margin-top: 70px;
+  margin-top: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,8 +199,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height: 90vh; */
-  /* height: 100%; */
 }
 
 .login-page h1 {
@@ -213,7 +211,6 @@ footer {
   position: absolute;
   overflow: auto;
   top: 80px;
-  /* height: 100%; */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -229,7 +226,6 @@ footer {
   position: absolute;
   overflow: auto;
   top: 80px;
-  /* height: 100%; */
   align-items: center;
   justify-content: center;
   width: 100%;
