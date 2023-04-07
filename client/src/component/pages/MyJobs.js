@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Card } from 'antd';
 import moment from 'moment'
-// import { UserContext } from "../../App";
+import { UserContext } from "../../App";
 
 const MyJobs = () => {
 
   const [myjobs, setJob] = useState([])
-  // const { state, dispatch } = useContext(UserContext)
+  const { state, dispatch } = useContext(UserContext)
 
   useEffect(() => {
     fetch("/myjobs", {
