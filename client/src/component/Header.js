@@ -5,11 +5,11 @@ import { UserContext } from '../App'
 
 const Header = () => {
 
-    const { state, dispatch } = useContext(UserContext)
+    // const { state, dispatch } = useContext(UserContext)
 
     const renderList = () => {
-        if (state) {
-            if (state.usertype==0) { // Applicant's navbar
+        if (true) {
+            if (false) { // Applicant's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
