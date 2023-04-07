@@ -10,7 +10,7 @@ router.use(bodyParser.json())
 
 
 //Create new job 
-router.post("/createjob",requireRecruiterLogin,(req,res)=>{
+router.post("/newjob",requireRecruiterLogin,(req,res)=>{
     const user = req.user;
     const data = req.body;
   console.log(req)

@@ -1,0 +1,287 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: "https://media.istockphoto.com/id/1279104620/photo/top-view-of-a-white-desktop-concept-job-search.jpg?s=612x612&w=0&k=20&c=Ow_kvA2wQ4rLlqX_oFHgpjLb1JMKyPQKLOPzbu6w6qw=";
+  z-index: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.content {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  color: black;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav h1 {
+  color: white;
+}
+
+
+.nav-left {
+  position: relative;
+  left: 30px;
+}
+
+.nav-left a {
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  position: absolute;
+  right: 15px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-right ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-right ul li {
+  padding: 12px;
+  font-size: 18px;
+}
+
+.nav-right ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-content {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+  color: #fff;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  width: 20px;
+  color: #fff;
+  transition: color .4s ease;
+
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom p a {
+  color: #44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+
+.footer-menu {
+  float: right;
+}
+
+.footer-menu ul {
+  display: flex;
+}
+
+.footer-menu ul li {
+  padding-right: 10px;
+  display: block;
+}
+
+.footer-menu ul li a {
+  color: #cfd2d6;
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+  color: #27bcda;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 90vh; */
+  /* height: 100%; */
+}
+
+.login-page h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-page-rec {
+  display: flex;
+  position: absolute;
+  overflow: auto;
+  top: 80px;
+  /* height: 100%; */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.signup-page-rec h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-page {
+  display: flex;
+  position: absolute;
+  overflow: auto;
+  top: 80px;
+  /* height: 100%; */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.signup-page h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-reg-rec {
+  width: 280px;
+}
+
+.btn-reg {
+  width: 320px;
+}
+
+.btn-login {
+  width: 310px;
+}
+
+.btn-new-job {
+  width: 350px;
+}
+
+.new-job {
+  width: 350px;
+}
+
+.new-job h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.jobs-rec {
+  width: 100vw;
+}
+
+.jobs-rec h1{
+  display: flex;
+  justify-content: center;
+}
+
+.job-rec{
+  border: 2px solid rgba(0, 0, 0, 0.467);
+  padding: 15px;
+  margin: 17px;
+}
