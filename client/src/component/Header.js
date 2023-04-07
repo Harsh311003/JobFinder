@@ -5,11 +5,11 @@ import { UserContext } from '../App'
 
 const Header = () => {
 
-    const { state, dispatch } = useContext(UserContext)
+    // const { state, dispatch } = useContext(UserContext)
 
     const renderList = () => {
-        if (state) {
-            if (state.usertype==0) {
+        if (true) {
+            if (false) { // Applicant's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
@@ -26,7 +26,7 @@ const Header = () => {
                     </div>
                 )
             }
-            else {
+            else {   // Recruiter's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
@@ -45,7 +45,7 @@ const Header = () => {
                 )
             }
         }
-        else {
+        else { // home navbar
             return (
                 <div className="nav">
                     <div className="nav-left">

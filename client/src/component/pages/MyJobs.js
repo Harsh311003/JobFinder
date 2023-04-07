@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Card } from 'antd';
 import moment from 'moment'
-import { UserContext } from "../../App";
+// import { UserContext } from "../../App";
 
 const MyJobs = () => {
 
   const [myjobs, setJob] = useState([])
-  const { state, dispatch } = useContext(UserContext)
+  // const { state, dispatch } = useContext(UserContext)
+
+  const user = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
     fetch("/myjobs", {
@@ -30,12 +32,23 @@ const MyJobs = () => {
             console.log(job)
             return (
               <Card className="job-rec" title={job.title} bordered={false} >
-                <p>Role: {job.jobType}</p>
-                <p>Salary: ₹ {job.salary}</p>
-                <p>Date of posting: {moment(job.dateOfPosting).format('YYYY-MM-DD')}</p>
-                <p>Number of Applicants: {job.maxApplicants}</p>
-                <p>Remaining Number of Positions: {job.maxPositions}</p>
-                <p>Skills: {job.skills}</p>
+                <div className="job-content">
+                  <div>
+                    <p>Role: {job.jobType}</p>
+                    <p>Salary: ₹ {job.salary} per month</p>
+                    <p>Posted By: {user.name}</p>
+                    <p>Date of posting: {moment(job.dateOfPosting).format('YYYY-MM-DD')}</p>
+                    <p>Application Deadline: {moment(job.deadline).format('YYYY-MM-DD')}</p>
+                    <p>Number of Applicants: {job.maxApplicants}</p>
+                    <p>Remaining Number of Positions: {job.maxPositions}</p>
+                    <p>Skills: {job.skills}</p>
+                  </div>
+                  <div className="job-content-btn">
+                    <button className="bton btn btn-secondary">View Applications</button>
+                    <button className="bton btn btn-secondary">Update Details</button>
+                    <button className="bton btn btn-secondary">Delete Job</button>
+                  </div>
+                </div>
               </Card>
             )
           })

@@ -15,7 +15,8 @@ code {
 }
 
 .content {
-  margin-top: 70px;
+  margin-top: 75px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,8 +200,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height: 90vh; */
-  /* height: 100%; */
 }
 
 .login-page h1 {
@@ -213,7 +212,6 @@ footer {
   position: absolute;
   overflow: auto;
   top: 80px;
-  /* height: 100%; */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -229,7 +227,6 @@ footer {
   position: absolute;
   overflow: auto;
   top: 80px;
-  /* height: 100%; */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -275,13 +272,28 @@ footer {
   width: 100vw;
 }
 
-.jobs-rec h1{
+.jobs-rec h1 {
   display: flex;
   justify-content: center;
 }
 
-.job-rec{
+.job-rec {
   border: 2px solid rgba(0, 0, 0, 0.467);
-  padding: 15px;
-  margin: 17px;
+  padding: 0px;
+  margin: 15px;
+}
+
+.job-content {
+  display: flex;
+  align-items: center;
+}
+
+.job-content-btn {
+  position: absolute;
+  right: 50px;
+  display: flex;
+}
+
+.bton{
+  margin: 15px;
 }
