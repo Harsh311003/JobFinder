@@ -16,22 +16,22 @@ export const UserContext = createContext()
 
 const Routing = () => {
 
-  // const navigate = useNavigate()
-  // const location = useLocation()
-  // const { state, dispatch } = useContext(UserContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { state, dispatch } = useContext(UserContext)
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("user"))
-  //   if (user) {
-  //     console.log(state)
-  //     console.log(user)
-  //     console.log(user.usertype)
-  //     dispatch({ type: "USER", payload: user })
-  //   } else {
-  //     if (!location.pathname.startsWith('/reset'))
-  //       navigate("/")
-  //   }
-  // }, [])
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (user) {
+      console.log(state)
+      console.log(user)
+      console.log(user.usertype)
+      dispatch({ type: "USER", payload: user })
+    } else {
+      if (!location.pathname.startsWith('/reset'))
+        navigate("/")
+    }
+  }, [])
 
   return (
     <Routes>
@@ -49,8 +49,8 @@ const Routing = () => {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
-    // <UserContext.Provider value={{ state, dispatch }}>
-    <UserContext.Provider>
+    <UserContext.Provider value={{ state, dispatch }}>
+      {/* <UserContext.Provider> */}
       <BrowserRouter>
         <Header />
         <Routing />
