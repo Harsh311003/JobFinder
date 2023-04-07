@@ -15,11 +15,12 @@ code {
 }
 
 .content {
-  margin-top: 75px;
-  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 75px;
+  margin-bottom: 25px;
+  height: 100%;
 }
 
 .nav {
@@ -71,7 +72,7 @@ code {
   text-decoration: none;
 }
 
-.btn-logout-rec {
+.btn-logout {
   background-color: rgb(8, 65, 76);
   border: none;
   color: white

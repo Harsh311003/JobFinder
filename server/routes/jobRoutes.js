@@ -4,6 +4,8 @@ const Recruiter = require("../models/Recruiter");
 const Job = require("../models/Job");
 
 const requireRecruiterLogin = require("../middleware/requireRecruiterLogin");
+const requireLogin = require('../middleware/requireLogin');
+
 const bodyParser = require("body-parser");
 const router = express.Router()
 router.use(bodyParser.json())
@@ -34,12 +36,25 @@ router.post("/newjob", requireRecruiterLogin, (req, res) => {
         });
 
 });
-//  my uploaded jobs
+
+//  my uploaded jobs (recruiter)
 router.get("/myjobs", requireRecruiterLogin, (req, res) => {
     Job.find({ userId: req.user._id })
         .then(myjobs => {
             console.log(myjobs)
             res.json({ myjobs })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+//  all uploaded jobs (applicant)
+router.get("/home", (req, res) => {
+    Job.find()
+        .then(allJobs => {
+            console.log(allJobs)
+            res.json({ allJobs })
         })
         .catch(err => {
             console.log(err)

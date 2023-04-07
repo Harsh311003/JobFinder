@@ -9,6 +9,7 @@ import Login from "./component/pages/Login"
 import LoginRec from "./component/pages/LoginRec"
 import CreateJob from "./component/pages/CreateJob";
 import MyJobs from './component/pages/MyJobs';
+import AllJobs from './component/pages/AllJobs'
 import { reducer, initialState } from './reducers/userReducer'
 
 export const UserContext = createContext()
@@ -42,6 +43,7 @@ const Routing = () => {
       <Route path='/loginrec' element={<LoginRec />} />
       <Route path='/newjob' element={<CreateJob />} />
       <Route path='/myjobs' element={<MyJobs />} />
+      <Route path='/home' element={<AllJobs />} />
     </Routes>
   )
 }

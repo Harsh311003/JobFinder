@@ -17,18 +17,18 @@ const Header = () => {
 
     const renderList = () => {
         if (true) {
-            if (false) { // Applicant's navbar
+            if (true) { // Applicant's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
-                            <a href="/"><h1>JobFinder</h1></a>
+                            <a href="/"><h3>JobFinder</h3></a>
                         </div>
                         <div className="nav-right">
                             <ul>
                                 <li><a href="/home">HOME</a></li>
                                 <li><a href="/applications">APPLICATIONS</a></li>
-                                <li><a href="/profile">Profile</a></li>
-                                <li><a href="/#">LOGOUT</a></li>
+                                <li><a href="/profile">PROFILE</a></li>
+                                <li><button className="btn-logout" onClick={logoutHandler}>LOGOUT</button></li>
                             </ul>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const Header = () => {
                                 <li><a href="/myjobs">MY JOBS</a></li>
                                 <li><a href="/#">EMPLOYEES</a></li>
                                 <li><a href="/profile">PROFILE</a></li>
-                                <li><button className="btn-logout-rec" onClick={logoutHandler}>LOGOUT</button></li>
+                                <li><button className="btn-logout" onClick={logoutHandler}>LOGOUT</button></li>
                             </ul>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const Header = () => {
             return (
                 <div className="nav">
                     <div className="nav-left">
-                        <a href="/"><h1>JobFinder</h1></a>
+                        <a href="/"><h3>JobFinder</h3></a>
                     </div>
                     <div className="nav-right">
                         <ul>

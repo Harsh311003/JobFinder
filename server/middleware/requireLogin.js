@@ -4,7 +4,7 @@ dotenv.config();
 
 const jwt = require("jsonwebtoken");
 const mongoose = require('mongoose');
-const Recruiter = require("../models/Recruiter");
+const Applicant = require("../models/Applicant");
 
 module.exports = (req, res, next) => {
     const { authorization } = req.headers; //Bearer lkdfjkljffls  (authorization will look like)
@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
             return res.status(401).json({ error: "You must be logged in" });
         }
         const { _id } = payload;
-        Recruiter.findById(_id).then(userdata => {
+        Applicant.findById(_id).then(userdata => {
             req.user = userdata;
             next();
         });

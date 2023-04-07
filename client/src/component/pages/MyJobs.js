@@ -5,7 +5,7 @@ import moment from 'moment'
 
 const MyJobs = () => {
 
-  const [myjobs, setJob] = useState([])
+  const [myJobs, setMyJobs] = useState([])
   // const { state, dispatch } = useContext(UserContext)
 
   const user = JSON.parse(localStorage.getItem("user"))
@@ -18,7 +18,7 @@ const MyJobs = () => {
     }).then(res => res.json())
       .then(result => {
         console.log(result);
-        setJob(result.myjobs)
+        setMyJobs(result.myjobs)
       })
   }, [])
 
@@ -28,7 +28,7 @@ const MyJobs = () => {
       <div className="jobs-rec">
         <h1>MY JOBS</h1>
         {
-          myjobs.map(job => {
+          myJobs.map(job => {
             console.log(job)
             return (
               <Card className="job-rec" title={job.title} bordered={false} >
