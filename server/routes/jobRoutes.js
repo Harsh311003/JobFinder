@@ -29,7 +29,7 @@ router.post("/newjob", requireRecruiterLogin, (req, res) => {
     });
     job.save().then(result => {
         res.json({ job: result })
-        console.log(result)
+        // console.log(result)
     })
         .catch(err => {
             console.log(err)
@@ -41,7 +41,7 @@ router.post("/newjob", requireRecruiterLogin, (req, res) => {
 router.get("/myjobs", requireRecruiterLogin, (req, res) => {
     Job.find({ userId: req.user._id })
         .then(myjobs => {
-            console.log(myjobs)
+            // console.log(myjobs)
             res.json({ myjobs })
         })
         .catch(err => {
@@ -53,7 +53,7 @@ router.get("/myjobs", requireRecruiterLogin, (req, res) => {
 router.get("/home", (req, res) => {
     Job.find()
         .then(allJobs => {
-            console.log(allJobs)
+            // console.log(allJobs)
             res.json({ allJobs })
         })
         .catch(err => {

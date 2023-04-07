@@ -1,11 +1,12 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from '../../App'
 import { Form, Input } from 'antd';
 import M from "materialize-css"
 
 const LoginRec = () => {
 
+  const { state, dispatch } = useContext(UserContext)
   const navigate = useNavigate();        /*instead of useHistory */
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")

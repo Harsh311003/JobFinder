@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Card } from 'antd';
 import moment from 'moment'
-// import { UserContext } from "../../App";
+import { UserContext } from "../../App";
 
 const AllJobs = () => {
 
   const [allJobs, setAllJobs] = useState([])
-  // const { state, dispatch } = useContext(UserContext)
+  const { state, dispatch } = useContext(UserContext)
 
   useEffect(() => {
     fetch("/home", {
@@ -15,7 +15,7 @@ const AllJobs = () => {
       }
     }).then(res => res.json())
       .then(result => {
-        console.log(result);
+        // console.log(result);
         setAllJobs(result.allJobs)
       })
   }, [])

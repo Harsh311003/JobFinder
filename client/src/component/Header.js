@@ -10,14 +10,18 @@ const Header = () => {
     const navigate = useNavigate();
 
     const logoutHandler = () => {
-        localStorage.removeItem("user");
+        localStorage.clear()
         message.success("Logout Successfully");
-        navigate("/");
+        dispatch({ type: "CLEAR" })
+        navigate('/')
+        window.location.reload();
     };
 
     const renderList = () => {
-        if (true) {
-            if (true) { // Applicant's navbar
+        console.log(state)
+        if (state) {
+            console.log(state.usertype)
+            if (state.usertype == 0) { // Applicant's navbar
                 return (
                     <div className="nav">
                         <div className="nav-left">
