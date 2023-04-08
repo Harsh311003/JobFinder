@@ -128,8 +128,8 @@ router.post("/login", (req, res) => {
                     if (doMatch) {
                         // res.json("Sucessfully logged in");
                         const token = jwt.sign({ _id: saveduser._id }, process.env.PASS_SEC); //saving user id to _id 
-                        const { _id, name, email } = saveduser
-                        res.json({ token, user: { _id, name, email } });
+                        const { _id,usertype, name,resume,image, email } = saveduser
+                        res.json({ token, user: { _id,usertype, name,resume,image, email } });
                     }
                     else {
                         return res.status(422).json({ error: "Invalid email or password" });
